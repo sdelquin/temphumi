@@ -6,7 +6,7 @@ Sensor of *temperature* and *humidity* using `micropython`.
 
 ### NodeMCU (ESP8266)
 
-![NodeMCU](img/NodeMCU.jpg)
+![NodeMCU](img/NodeMcu.jpg)
 
 ### DHT22
 

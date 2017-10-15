@@ -1,1 +1,2 @@
 mpfshell==0.8.1
+esptool==2.1

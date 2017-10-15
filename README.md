@@ -33,7 +33,7 @@ Sensor of *temperature* and *humidity* using `micropython`.
 
 On the PC:
 
-```console
+```bash
 $> cp config.tmpl.py config.py
 # set your own values
 $> pip install -r requirements.txt

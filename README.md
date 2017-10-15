@@ -34,11 +34,11 @@ Sensor of *temperature* and *humidity* using `micropython`.
 On the PC:
 
 ```bash
-$> cp config.tmpl.py config.py
+$ cp config.tmpl.py config.py
 # set your own values
-$> pip install -r requirements.txt
-$> make deploy
-$> make
+$ pip install -r requirements.txt
+$ make deploy
+$ make
 ```
 
 On the NodeMCU:

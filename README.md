@@ -44,8 +44,8 @@ $ make
 On the NodeMCU:
 
 ```python
->>> import temphumi
->>> temphumi.run()
+>>> import machine
+>>> machine.reset()
 ```
 
 ## Tracking

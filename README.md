@@ -37,8 +37,7 @@ On the PC:
 $ cp config.tmpl.py config.py
 # set your own values
 $ pip install -r requirements.txt
-$ make deploy
-$ make
+$ python manage.py deploy
 ```
 
 On the NodeMCU:

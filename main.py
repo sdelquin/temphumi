@@ -27,9 +27,14 @@ def send_data(temperature, humidity):
     r.close()
 
 
-connect_to_wifi()
-d = DHT22(Pin(PIN_LABEL["D5"]))
-while True:
-    d.measure()
-    send_data(d.temperature(), d.humidity())
-    time.sleep(1)
+def run():
+    connect_to_wifi()
+    d = DHT22(Pin(PIN_LABEL["D5"]))
+    while True:
+        d.measure()
+        send_data(d.temperature(), d.humidity())
+        time.sleep(1)
+
+
+if __name__ == "__main__":
+    run()

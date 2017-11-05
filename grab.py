@@ -1,21 +1,32 @@
 import config
 import requests
 import dateparser
-import sqlite3
+import csv
+import os.path
 
-url = f"https://dweet.io/get/dweets/for/{config.DWEET_THING}"
-r = requests.get(url)
-dweets = r.json()
-temperature = dweets["with"][0]["content"]["temperature"]
-humidity = dweets["with"][0]["content"]["humidity"]
-timestamp = dateparser.parse(
-    dweets["with"][0]["created"],
-    settings={"TO_TIMEZONE": config.TIME_ZONE}
-).strftime("%y-%m-%d %H:%M:%S")
 
-db_connection = sqlite3.connect(config.DATABASE)
-with db_connection:
-    db_cursor = db_connection.cursor()
-    sql = f"INSERT INTO data (timestamp, temperature, humidity) VALUES \
-        ('{timestamp}', {temperature}, {humidity})"
-    db_cursor.execute(sql)
+def get_data():
+    url = f"https://dweet.io/get/dweets/for/{config.DWEET_THING}"
+    r = requests.get(url)
+    dweets = r.json()
+    temperature = dweets["with"][0]["content"]["temperature"]
+    humidity = dweets["with"][0]["content"]["humidity"]
+    timestamp = dateparser.parse(
+        dweets["with"][0]["created"],
+        settings={"TO_TIMEZONE": config.TIME_ZONE}
+    ).strftime("%y-%m-%d %H:%M:%S")
+    return timestamp, temperature, humidity
+
+
+def save_data(data):
+    if os.path.isfile(config.CSV_FILE):
+        with open(config.CSV_FILE, "a") as csv_file:
+            csv_writer = csv.writer(csv_file)
+            csv_writer.writerow(data)
+    else:
+        with open(config.CSV_FILE, "w") as csv_file:
+            csv_file.write("{}\n".format(",".join(config.FIELD_NAMES)))
+
+
+data = get_data()
+save_data(data)

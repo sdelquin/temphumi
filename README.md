@@ -31,8 +31,6 @@ Sensor of *temperature* and *humidity* using `micropython`.
 
 ## Usage
 
-On the PC:
-
 ```bash
 $ cp config.tmpl.py config.py
 # set your own values
@@ -40,12 +38,7 @@ $ pip install -r requirements.txt
 $ python manage.py deploy
 ```
 
-On the NodeMCU:
-
-```python
->>> import machine
->>> machine.reset()
-```
+Reset the NodeMCU and have fun!
 
 ## Tracking
 

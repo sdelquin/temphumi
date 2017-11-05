@@ -3,3 +3,4 @@ esptool==2.1
 dateparser==0.6.0
 fabulous==0.3.0
 requests==2.18.4
+Fabric3==1.13.1.post1

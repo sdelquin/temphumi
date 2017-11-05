@@ -2,3 +2,4 @@ mpfshell==0.8.1
 esptool==2.1
 dateparser==0.6.0
 fabulous==0.3.0
+requests==2.18.4

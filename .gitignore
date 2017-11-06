@@ -2,3 +2,4 @@ config.py
 __pycache__
 .DS_Store
 sensor.csv
+.ipynb_checkpoints

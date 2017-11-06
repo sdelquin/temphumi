@@ -14,7 +14,7 @@ def get_data():
     timestamp = dateparser.parse(
         dweets["with"][0]["created"],
         settings={"TO_TIMEZONE": config.TIME_ZONE}
-    ).strftime("%y-%m-%d %H:%M")
+    ).strftime("%d-%m-%y %H:%M")
     return timestamp, temperature, humidity
 
 

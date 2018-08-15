@@ -3,7 +3,7 @@ from dht import DHT22
 import time
 import network
 import urequests
-import config
+import uconfig
 
 PIN_LABEL = {
     "D5": 14,
@@ -13,13 +13,13 @@ PIN_LABEL = {
 def connect_to_wifi():
     sta_if = network.WLAN(network.STA_IF)
     sta_if.active(True)
-    sta_if.connect(config.WIFI["ssid"], config.WIFI["password"])
+    sta_if.connect(uconfig.WIFI_SSID, uconfig.WIFI_PASSWORD)
     return sta_if.isconnected()
 
 
 def send_data(temperature, humidity):
     url = "https://dweet.io/dweet/for/{}?temperature={}&humidity={}".format(
-        config.DWEET_THING,
+        uconfig.DWEET_THING,
         temperature,
         humidity
     )

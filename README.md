@@ -31,14 +31,30 @@ Sensor of *temperature* and *humidity* using `micropython`.
 
 ## Usage
 
-```bash
-$ cp config.tmpl.py config.py
-# set your own values
-$ pip install -r requirements.txt
-$ python manage.py deploy
-```
+> **IMPORTANT**: Use a **DATA** cable (*usb-microusb*) to connect the ESP8266 with the computer. Otherwise it won't be recognised and no device will bring up.
 
-Reset the NodeMCU and have fun!
+Set the corresponding settings in `.env` file:
+
+~~~console
+$ vi .env
+# ...
+~~~
+
+Install requirements:
+
+~~~console
+$ pipenv install
+~~~
+
+Deploy files to ESP8266:
+
+~~~console
+$ python manage.py deploy
+~~~
+
+**Reset the NodeMCU and have fun!** (press the `RST` button on board)
+
+> When resseting the ESP8266 it will try to run `main.py`
 
 ## Tracking
 

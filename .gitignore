@@ -1,5 +1,7 @@
-config.py
-__pycache__
+*.pyc
 .DS_Store
 sensor.csv
 .ipynb_checkpoints
+.vscode
+.env
+uconfig.py

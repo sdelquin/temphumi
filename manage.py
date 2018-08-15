@@ -13,6 +13,10 @@ elif sys.argv[1] == "deploy":
         - Otherwise, press CTRL-C, reset the NodeMCU
         by pressing the button on the board and try it again!
     """))
+    with open('uconfig.py', 'w') as f:
+        f.write(f'DWEET_THING = "{config.DWEET_THING}"{os.linesep}')
+        f.write(f'WIFI_SSID = "{config.WIFI_SSID}"{os.linesep}')
+        f.write(f'WIFI_PASSWORD = "{config.WIFI_PASSWORD}"{os.linesep}')
     files = ";".join(f"put {file}" for file in config.FILES_TO_DEPLOY)
     error = os.system("mpfshell -n -c 'open {}; {}'".format(
             config.TTY_HANDLER, files)

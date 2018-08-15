@@ -1,4 +1,4 @@
-from fabric.api import local, prefix, cd, run, env, get
+from fabric.api import local, cd, run, env, get
 import config
 
 env.hosts = ["production"]
@@ -6,10 +6,9 @@ env.hosts = ["production"]
 
 def deploy():
     local("git push")
-    with prefix("source ~/.virtualenvs/temphumi/bin/activate"):
-        with cd("~/temphumi"):
-            run("git pull")
-            run("pip install -r requirements.txt")
+    with cd("~/temphumi"):
+        run("git pull")
+        run("pipenv install")
 
 
 def get_data():

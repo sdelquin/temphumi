@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd "$(dirname "$0")"
-exec pipenv run grab.py
+exec pipenv run python grab.py

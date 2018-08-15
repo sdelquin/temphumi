@@ -15,6 +15,7 @@ dateparser = "*"
 ipython = "*"
 "flake8" = "*"
 rope = "*"
+"fabric3" = "*"
 
 [requires]
 python_version = "3.6"
